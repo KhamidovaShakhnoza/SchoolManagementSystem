@@ -1,32 +1,36 @@
 package SchoolManagement;
 
 public class School {
-    private Teacher[] teachers;
-    private Student[] students;
-    private int teacherCount;
-    private int studentCount;
-    private double totalMoneyEarned;
-    private double totalMoneySpent;
-
-    public School() {
-        teachers = new Teacher[100];
-        students = new Student[100];
-        teacherCount = 0;
-        studentCount = 0;
-        totalMoneyEarned = 0;
-        totalMoneySpent = 0;
-    }
+    private Teacher[] teachers=new Teacher[10];
+    private Student[] students= new Student[10];
+    private int teacherCount=0;
+    private int studentCount=0;
+    private double totalMoneyEarned=0;
+    private double totalMoneySpent=0;
 
     public void addTeacher(Teacher teacher) {
-        if (teacherCount < teachers.length) {
-            teachers[teacherCount++] = teacher;
+
+        if(teacherCount>=teachers.length) {
+            Teacher[] newTeachers=new Teacher[teachers.length*2];
+            for (int i = 0; i < teachers.length; i++) {
+                newTeachers[i]=teachers[i];
+            }
+            teachers=newTeachers;
         }
+            teachers[teacherCount++] = teacher;
+
     }
 
     public void addStudent(Student student) {
-        if (studentCount < students.length) {
-            students[studentCount++] = student;
-        }
+
+            if (studentCount>=students.length) {
+                Student[] newStudents=new Student[students.length*2];
+                for (int i = 0; i < students.length; i++) {
+                    newStudents[i]=students[i];
+                }
+            }
+        students[studentCount++] = student;
+
     }
 
     public Teacher[] getTeachers() {
