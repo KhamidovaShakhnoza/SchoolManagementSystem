@@ -1,8 +1,8 @@
 package SchoolManagement;
 
 public class School {
-    private Teacher[] teachers=new Teacher[10];
-    private Student[] students= new Student[10];
+    private Teacher[] teachers=new Teacher[2];
+    private Student[] students= new Student[2];
     private int teacherCount=0;
     private int studentCount=0;
     private double totalMoneyEarned=0;
